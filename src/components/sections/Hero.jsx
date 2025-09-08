@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect";
@@ -183,6 +183,8 @@ const Img = styled.img`
   height: 100%;
   max-width: 400px;
   max-height: 400px;
+  object-fit: cover;
+  object-position: center;
   border: 2px solid ${({ theme }) => theme.primary};
 
   @media (max-width: 640px) {
@@ -215,7 +217,7 @@ const HeroBg = styled.div`
   }
 `;
 
-const Hero = () => {
+const Hero = memo(() => {
   return (
     <div id="About">
       <HeroContainer>
@@ -265,6 +267,8 @@ const Hero = () => {
       </HeroContainer>
     </div>
   );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;

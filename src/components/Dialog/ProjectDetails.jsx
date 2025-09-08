@@ -65,10 +65,15 @@ const Desc = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  object-fit: cover;
+  max-height: 400px;
+  object-fit: contain;
+  object-position: center;
   border-radius: 12px;
   margin-top: 30px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  background-color: ${({ theme }) => theme.white};
+  padding: 16px;
+  box-sizing: border-box;
 `;
 
 const Label = styled.div`
@@ -239,7 +244,7 @@ const ProjectDetails = ({ openModal, setOpenModal }) => {
               View Code
             </Button>
             <Button href={project?.webapp} target="new">
-              View Report/Live App
+              View Live App
             </Button>
           </ButtonGroup>
         </Wrapper>

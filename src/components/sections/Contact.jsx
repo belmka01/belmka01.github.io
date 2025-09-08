@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import EarthCanvas from "../canvas/Earth";
@@ -100,22 +100,16 @@ const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
   text-align: center;
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
+  background: ${({ disabled }) => 
+    disabled 
+      ? "rgba(128, 128, 128, 0.5)" 
+      : "hsla(271, 100%, 50%, 1)"
+  };
+  background: ${({ disabled }) => 
+    disabled 
+      ? "rgba(128, 128, 128, 0.5)" 
+      : "linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%)"
+  };
   padding: 13px 16px;
   margin-top: 2px;
   border-radius: 12px;
@@ -123,29 +117,80 @@ const ContactButton = styled.input`
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
+  cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer"};
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: ${({ disabled }) => disabled ? "none" : "translateY(-2px)"};
+  }
+`;
+
+const MessageDisplay = styled.div`
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  background-color: ${({ success }) => 
+    success 
+      ? "rgba(34, 197, 94, 0.1)" 
+      : "rgba(239, 68, 68, 0.1)"
+  };
+  border: 1px solid ${({ success }) => 
+    success 
+      ? "rgba(34, 197, 94, 0.3)" 
+      : "rgba(239, 68, 68, 0.3)"
+  };
+  color: ${({ success, theme }) => 
+    success 
+      ? "#22c55e" 
+      : "#ef4444"
+  };
 `;
 
 const Contact = () => {
   const form = useRef();
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_tox7kqs",
-        "template_nv7k7mj",
-        form.current,
-        "SybVGsYS52j2TfLbi"
-      )
-      .then(
-        (result) => {
-          alert("Message Sent");
-          form.current.resut();
-        },
-        (error) => {
-          alert(error);
-        }
-      );
+    setLoading(true);
+    setMessage("");
+
+    try {
+      emailjs
+        .sendForm(
+          "service_8aebk5i",
+          "template_inxxex4",
+          form.current,
+          "3bRpwtcx-3rYV5sb1"
+        )
+        .then(
+          (result) => {
+            setMessage("Message sent successfully! I'll get back to you soon.");
+            if (form.current) {
+              form.current.reset();
+            }
+            setLoading(false);
+          },
+          (error) => {
+            setMessage("Failed to send message. Please try again or contact me directly.");
+            setLoading(false);
+            console.error("EmailJS error:", error);
+          }
+        )
+        .catch((error) => {
+          setMessage("An unexpected error occurred. Please try again later.");
+          setLoading(false);
+          console.error("Unexpected error:", error);
+        });
+    } catch (error) {
+      setMessage("An unexpected error occurred. Please try again later.");
+      setLoading(false);
+      console.error("Form submission error:", error);
+    }
   };
 
   return (
@@ -156,13 +201,44 @@ const Contact = () => {
         <Desc>
           Feel free to reach out to me for any questions or opportunities!
         </Desc>
-        <ContactForm onSubmit={handleSubmit}>
+        <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" name="message" rows={4} />
-          <ContactButton type="submit" value="Send" />
+          <ContactInput 
+            placeholder="Your Email" 
+            name="from_email" 
+            type="email"
+            required
+            disabled={loading}
+          />
+          <ContactInput 
+            placeholder="Your Name" 
+            name="from_name" 
+            required
+            disabled={loading}
+          />
+          <ContactInput 
+            placeholder="Subject" 
+            name="subject" 
+            required
+            disabled={loading}
+          />
+          <ContactInputMessage 
+            placeholder="Message" 
+            name="message" 
+            rows={4}
+            required
+            disabled={loading}
+          />
+          <ContactButton 
+            type="submit" 
+            value={loading ? "Sending..." : "Send"} 
+            disabled={loading}
+          />
+          {message && (
+            <MessageDisplay success={message.includes("successfully")}>
+              {message}
+            </MessageDisplay>
+          )}
         </ContactForm>
       </Wrapper>
     </Container>

@@ -1,4 +1,4 @@
-export const transition = { type: "spring", duration: 0.8 };
+export const transition = { type: "spring", duration: 0.6, stiffness: 100, damping: 20 };
 
 export const slideAnimation = (direction) => {
   return {
@@ -42,10 +42,10 @@ export const headTextAnimation = {
   animate: { x: 0, opacity: 1 },
   transition: {
     type: "spring",
-    damping: 5,
-    stiffness: 40,
+    damping: 15,
+    stiffness: 100,
     restDelta: 0.001,
-    duration: 0.3,
+    duration: 0.4,
   },
 };
 
@@ -54,12 +54,12 @@ export const headContentAnimation = {
   animate: { y: 0, opacity: 1 },
   transition: {
     type: "spring",
-    damping: 7,
-    stiffness: 30,
+    damping: 20,
+    stiffness: 100,
     restDelta: 0.001,
-    duration: 0.6,
-    delay: 0.2,
-    delayChildren: 0.2,
+    duration: 0.5,
+    delay: 0.1,
+    delayChildren: 0.1,
   },
 };
 

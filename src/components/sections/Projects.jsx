@@ -104,10 +104,9 @@ const Projects = ({ openModal, setOpenModal }) => {
             marginBottom: "40px",
           }}
         >
-          I have worked on a wide range of projects. From web apps to firewall 
-          setup. Here are some of my projects.
+          I have worked on a wide range of projects. From AI/ML solutions to cybersecurity tools 
+          and mobile apps. Here are some of my projects.
         </Desc>
-        
         <ToggleButtonGroup>
           <ToggleButton
             active={toggle === "all"}
@@ -115,45 +114,34 @@ const Projects = ({ openModal, setOpenModal }) => {
           >
             ALL
           </ToggleButton>
-
           <Divider />
-          
           <ToggleButton
-            active={toggle === "Security"}
-            onClick={() => setToggle("Security")}
+            active={toggle === "AI/ML"}
+            onClick={() => setToggle("AI/ML")}
           >
-            Security
+            AI/ML
           </ToggleButton>
-
           <Divider />
           <ToggleButton
-            active={toggle === "mobile app"}
-            onClick={() => setToggle("mobile app")}
+            active={toggle === "Cybersecurity"}
+            onClick={() => setToggle("Cybersecurity")}
           >
-            Mobile APP'S
+            CYBERSECURITY
           </ToggleButton>
-
           <Divider />
           <ToggleButton
-            active={toggle === "machine learning"}
-            onClick={() => setToggle("machine learning")}
+            active={toggle === "Mobile App"}
+            onClick={() => setToggle("Mobile App")}
           >
-            MACHINE LEARNING
+            MOBILE APP
           </ToggleButton>
         </ToggleButtonGroup>
         <CardContainer>
-          {toggle === "all" &&
-            projects.map((project) => (
-              <ProjectCard
-                project={project}
-                openModal={openModal}
-                setOpenModal={setOpenModal}
-              />
-            ))}
           {projects
-            .filter((item) => item.category === toggle)
+            .filter((item) => toggle === "all" || item.category === toggle)
             .map((project) => (
               <ProjectCard
+                key={project.id}
                 project={project}
                 openModal={openModal}
                 setOpenModal={setOpenModal}

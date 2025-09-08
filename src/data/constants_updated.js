@@ -7,7 +7,7 @@ export const Bio = {
     "Software Engineer",
   ],
   description:
-    "I am a Cyber Security Engineer with expertise in Penetration Testing, AI-driven security solutions, and software development. I graduated with an Engineering Diploma in Cyber Security and Defence from SUP'COM in October 2024. I specialize in building AI-powered Apps, automated tools, and implementing robust security measures.",
+    "I am a Network Security Engineer at Orange TN with expertise in cybersecurity, AI-driven security solutions, and software development. Currently pursuing an Engineering Diploma in Cyber Security and Defence at SUP'COM. I specialize in building AI-powered security tools, automated penetration testing, and implementing robust network security measures. My experience includes working with major companies like Orange TN, RiskImmune, and INOTEQIA on cutting-edge security projects.",
   github: "https://github.com/fathi-belmkadem",
   resume:
     "https://drive.google.com/file/d/your-resume-link/view?usp=drive_link",
@@ -164,51 +164,12 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "Water Consumption Management System",
-    date: "2024",
-    description:
-      "Developed a comprehensive water management system for a government enterprise to track and manage water consumption, invoices, customers, and payments. Features include complex management by region, vault tracking, automated billing, and real-time consumption monitoring with advanced analytics and reporting capabilities.",
-    image: "/water_management.png",
-    tags: [
-      "Full Stack Development",
-      "Government Solutions",
-      "Water Management",
-      "Invoice Management",
-      "Payment Processing",
-      "Regional Analytics",
-      "Vault Tracking",
-    ],
-    category: "Freelance",
-    github: "https://github.com/fathi-belmkadem/water-management-system",
-    webapp: "https://water-management-demo.netlify.app/",
-  },
-  {
-    id: 2,
-    title: "Outfai App",
-    date: "2024",
-    description:
-      "Developed the Outfai mobile application, a comprehensive fashion and outfit management platform. Features include outfit recommendations, wardrobe organization, style tracking, and social sharing capabilities. Built with modern mobile development practices and integrated AI-powered styling suggestions.",
-    image: "/outfai_logo.png",
-    tags: [
-      "Mobile App Development",
-      "Fashion Technology",
-      "AI Recommendations",
-      "Wardrobe Management",
-      "Social Features",
-      "Style Tracking",
-      "User Experience",
-    ],
-    category: "Freelance",
-    github: "https://github.com/fathi-belmkadem/outfai-app",
-    webapp: "https://outfai-demo.netlify.app/",
-  },
-  {
-    id: 3,
     title: "AI-Driven Automated Penetration Testing",
     date: "Feb 2024 - Jul 2024",
     description:
       "Built an AI tool for automated vulnerability detection and prioritization at RiskImmune. Integrated permission-based testing for ethical hacking and designed a full AI-powered system to autonomously scan, exploit, and report vulnerabilities.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop",
     tags: [
       "Python",
       "AI/ML",
@@ -221,12 +182,13 @@ export const projects = [
     webapp: "https://ai-pentesting-demo.netlify.app/",
   },
   {
-    id: 4,
+    id: 2,
     title: "MITRE ATT&CK Framework in SOAR",
     date: "Sep 2023 - Jan 2024",
     description:
       "Integrated ATT&CK framework into a SOAR platform for enhanced detection & response at 6NLG. Automated OSquery collection and aligned detection rules, proposing solutions for attack classification and mitigation.",
-    image: "/SOAR.png",
+    image:
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
     tags: [
       "MITRE ATT&CK",
       "SOAR",
@@ -239,12 +201,13 @@ export const projects = [
     webapp: "https://attack-soar-demo.netlify.app/",
   },
   {
-    id: 5,
+    id: 3,
     title: "AI-driven Malware Analysis",
     date: "Jun 2023 - Aug 2023",
     description:
       "Implemented ML models in Cuckoo Sandbox for evasive malware detection at INOTEQIA. Designed scalable architecture against advanced malware and increased detection rate for unknown threats.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop",
     tags: [
       "Machine Learning",
       "Malware Analysis",
@@ -257,12 +220,13 @@ export const projects = [
     webapp: "https://malware-analysis-demo.netlify.app/",
   },
   {
-    id: 6,
+    id: 4,
     title: "Web Application Firewall",
     date: "Jan 2023 - May 2023",
     description:
       "Deployed ModSecurity as a reverse proxy for containerized servers. Configured custom rulesets, reducing attacks by 70%. Implemented comprehensive protection against OWASP Top 10 vulnerabilities.",
-    image: "/WAF.png",
+    image:
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
     tags: [
       "ModSecurity",
       "WAF",
@@ -277,12 +241,13 @@ export const projects = [
     webapp: "https://waf-demo.netlify.app/",
   },
   {
-    id: 7,
+    id: 5,
     title: "Real-time Meteorology App",
     date: "Oct 2022 - Jan 2023",
     description:
       "Built a real-time mobile app to visualize weather data from LoRa stations. Features include live data streaming, interactive charts, and weather alerts for meteorological monitoring.",
-    image: "/meteorology_app.png",
+    image:
+      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
     tags: [
       "Flutter",
       "Laravel",
@@ -292,16 +257,17 @@ export const projects = [
       "Mobile App",
     ],
     category: "Mobile App",
-    github: "https://github.com/fathi-belmkadem/mobile-project",
+    github: "https://github.com/fathi-belmkadem/meteorology-app",
     webapp: "https://meteorology-app-demo.netlify.app/",
   },
   {
-    id: 8,
+    id: 6,
     title: "Network Traffic Surveillance",
     date: "Jun 2022 - Aug 2022",
     description:
       "Applied ML algorithms to analyze traffic patterns at ANCS. Built models for real-time threat detection and improved defenses with quick reaction capabilities against network attacks.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop",
     tags: [
       "Machine Learning",
       "Network Security",
@@ -320,9 +286,8 @@ export const experiences = [
     id: 1,
     title: "Network Security Engineer",
     company: "Orange TN",
-    date: "Sep 2024 - May 2025",
+    date: "Sep 2024 - Present",
     location: "Tunisia",
-    img: "/Orange_S.A.-Logo.wine.png",
     description: [
       "Configure and maintain firewall policies (Fortinet, Juniper, Cisco)",
       "Deploy and manage VPNs (MPLS, L2VPN, VSI) for secure B2B communication",
@@ -336,7 +301,6 @@ export const experiences = [
     company: "RiskImmune",
     date: "Feb 2024 - Jul 2024",
     location: "Hybrid",
-    img: "/Responsible_cyber.jpg",
     description: [
       "Built AI tool for automated vulnerability detection and prioritization",
       "Integrated permission-based testing for ethical hacking",
@@ -350,7 +314,6 @@ export const experiences = [
     company: "6NLG",
     date: "Sep 2023 - Jan 2024",
     location: "Hybrid",
-    img: "/SOAR.png",
     description: [
       "Integrated ATT&CK framework into SOAR platform for enhanced detection",
       "Automated OSquery collection and aligned detection rules",
@@ -364,7 +327,6 @@ export const experiences = [
     company: "INOTEQIA",
     date: "Jun 2023 - Aug 2023",
     location: "On-site",
-    img: "/cytekia_logo.jpg",
     description: [
       "Implemented ML models in Cuckoo Sandbox for evasive malware detection",
       "Designed scalable architecture against advanced malware",
@@ -378,7 +340,6 @@ export const experiences = [
     company: "ANCS",
     date: "Jun 2022 - Aug 2022",
     location: "On-site",
-    img: "/ANCS_logo.jpg",
     description: [
       "Applied ML algorithms to analyze traffic patterns",
       "Built models for real-time threat detection",
@@ -393,9 +354,8 @@ export const education = [
     id: 1,
     school: "Higher School of Communication of Tunis - SUP'COM",
     degree: "Engineering Diploma – Telecommunication: Cyber Security and Defence",
-    date: "Sep 2021 - Oct 2024",
+    date: "Sep 2021 - Present",
     location: "Ariana, Tunisia",
-    img: "/Supcom_logo.jpg",
     description: "Courses: Ethical Hacking, Blockchain, Cyber infrastructures protection, IoT & Cloud Security, Application Security",
   },
   {
@@ -404,15 +364,22 @@ export const education = [
     degree: "Pre-Engineering Studies (Math & Physics)",
     date: "Sep 2019 - Jun 2021",
     location: "Tunis, Tunisia",
-    img: "/institut-preparatoire-aux-etudes-dingenieurs-d-el-manar.png",
     description: "National Rank: 127/1500",
-  }
+  },
+  {
+    id: 3,
+    school: "El Kef Pioneer High School – LPK",
+    degree: "Baccalaureate Degree: Mathematics",
+    date: "Sep 2015 - Jun 2019",
+    location: "El Kef, Tunisia",
+    description: "Mathematics specialization with excellent academic performance",
+  },
 ];
 
 export const certificates = [
   {
     id: 1,
-    name: "IC2 - CyberSecurity Certified (CC)",
+    name: "IC2 – CyberSecurity Certified (CC)",
     issuer: "IC2",
     date: "Apr 2024",
     credential: "CC-2024-001",

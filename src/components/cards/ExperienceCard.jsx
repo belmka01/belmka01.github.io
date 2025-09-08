@@ -9,11 +9,17 @@ const Top = styled.div`
   gap: 12px;
 `;
 const Image = styled.img`
+  width: 50px;
   height: 50px;
   border-radius: 10px;
   margin-top: 4px;
+  object-fit: contain;
+  background-color: ${({ theme }) => theme.white};
+  padding: 4px;
+  box-sizing: border-box;
 
   @media only screen and (max-width: 768px) {
+    width: 40px;
     height: 40px;
   }
 `;
@@ -101,7 +107,7 @@ const ExperienceCard = ({ experience }) => {
         <img
           width="100%"
           height="100%"
-          alt={experience.school}
+          alt={experience.company}
           style={{ borderRadius: "50%", objectFit: "cover" }}
           src={experience.img}
         />
@@ -126,13 +132,19 @@ const ExperienceCard = ({ experience }) => {
       <Top>
         <Image src={experience.img} />
         <Body>
-          <Role>{experience.role}</Role>
+          <Role>{experience.title}</Role>
           <Company>{experience.company}</Company>
           <Date>{experience.date}</Date>
         </Body>
       </Top>
       <Description>
-        {experience?.desc && <Span>{experience?.desc}</Span>}
+        {experience?.description && (
+          <Span>
+            {experience.description.map((desc, index) => (
+              <div key={index}>• {desc}</div>
+            ))}
+          </Span>
+        )}
         {experience?.skills && (
           <>
             <br />
@@ -140,7 +152,7 @@ const ExperienceCard = ({ experience }) => {
               <b>Skills:</b>
               <ItemWrapper>
                 {experience?.skills?.map((skill, index) => (
-                  <Skill>• {skill}</Skill>
+                  <Skill key={index}>• {skill}</Skill>
                 ))}
               </ItemWrapper>
             </Skills>
