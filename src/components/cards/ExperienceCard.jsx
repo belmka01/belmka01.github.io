@@ -76,7 +76,9 @@ const Description = styled.div`
   }
 `;
 const Span = styled.div`
-  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   max-width: 100%;
 `;
 const Skills = styled.div`

@@ -1,7 +1,7 @@
 {
   "name": "3d-portfolio-website",
   "version": "0.1.1",
-  "homepage": "https://fathi-belmkadem.github.io/",
+  "homepage": "https://belmka01.github.io/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
@@ -14,6 +14,7 @@
     "@react-three/fiber": "^8.15.16",
     "emailjs": "^4.0.3",
     "framer-motion": "^11.0.5",
+    "gh-pages": "^3.2.3",
     "maath": "^0.10.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -24,8 +25,7 @@
     "react-vertical-timeline-component": "^3.6.0",
     "styled-components": "^6.1.8",
     "three": "^0.161.0",
-    "typewriter-effect": "^2.21.0",
-    "gh-pages": "^3.2.3"
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -42,7 +42,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -r https://github.com/belmka01/belmka01.github.io.git -b main"
   },
   "eslintConfig": {
     "extends": [

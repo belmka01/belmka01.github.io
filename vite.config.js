@@ -9,7 +9,7 @@ export default defineConfig({
       jsxImportSource: 'react'
     })
   ],
-  base: process.env.NODE_ENV === 'production' ? '/fathi-belmkadem.github.io/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
   build: {
     outDir: 'dist',
     sourcemap: false,
